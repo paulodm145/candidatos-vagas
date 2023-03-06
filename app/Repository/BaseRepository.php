@@ -24,13 +24,6 @@ abstract class BaseRepository
 
     public function getAll(array $filters = [], int $perPage = 5, string $sortField = 'id', string $sortDirection = 'asc')
     {
-//        $teste = '';
-//        foreach ($filters as $key => $value) {
-//            $teste .=  $filters[$key][0]. ' - ' . $filters[$key][1] . '<br>';
-//        }
-//
-//        dd($teste);
-
         $query = $this->model->query();
 
         foreach ($filters as $key => $value) {

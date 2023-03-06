@@ -74,6 +74,18 @@ Acesse o projeto
 php artisan passport:install
 ```
 - Documentação do Laravel Passport: [https://laravel.com/docs/9.x/passport](https://laravel.com/docs/9.x/passport)
+- Exemplo de rota com consulta:
+```sh
+`GET` http://localhost:8989/api/candidatos?filters[]=nome|like&nome=sr
+```
+O parametro Filters é um array que recebe os campos que serão filtrados, o operador. Exemplo: filters[]=nome|like  
+O parametro nome é o valor(campo) que será filtrado seguido do valor. Exemplo: nome=sr  
+É possível passar mais de um filtro, basta separar por &. Exemplo: filters[]=nome|like&nome=sr&filters[]=....  
+Outros parametros:
+- per_page: Quantidade de registros por página. O padrão é 20;
+- sort_field: Campo que será ordenado. O padrão é id;
+- sort_direction: Ordem de ordenação (asc ou desc). O padrão é asc;
+
 
 ### Tecnologias utilizadas
 - PHP 8.0
